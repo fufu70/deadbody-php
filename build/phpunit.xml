@@ -26,6 +26,11 @@
         <whitelist>
             <directory>../src</directory>
         </whitelist>
+        <blacklist>
+            <directory>../src/protected/extensions</directory>
+            <directory>../src/protected/runtime</directory>
+            <directory>../src/protected/vendor</directory>
+        </blacklist>
     </filter>
 
 </phpunit>
