@@ -1,12 +1,34 @@
 <?xml version="1.0"?>
 <ruleset name="PHP_CodeSniffer">
 
-    <description>BFM Application Builder</description>
+    <description>PHP Dead body </description>
+
+    <exclude-pattern>*/extensions/*</exclude-pattern>
+ 	<exclude-pattern>*/runtime/*</exclude-pattern>
+ 	<exclude-pattern>*/vendor/*</exclude-pattern>
+
+    <rule ref="Squiz"/>
 
     <rule ref="Generic.WhiteSpace.DisallowSpaceIndent">
         <message>Use Tabs for line indents</message>
     </rule>
 
-    <rule ref="PEAR"/>
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+    <rule ref="Generic.Commenting.Todo"/>
+    <rule ref="Generic.ControlStructures.InlineControlStructure"/>
+
+    <rule ref="Generic.Files.LineLength.MaxExceeded">
+        <message>Line contains %2$s chars, which is more than the limit of %1$s</message>
+    </rule>
+    <rule ref="Generic.Files.LineLength.TooLong">
+        <message>Line longer than %s characters; contains %s characters</message>
+    </rule>
+
+    <rule ref="Generic.Files.LineLength">
+        <properties>
+            <property name="lineLimit" value="90"/>
+            <property name="absoluteLineLimit" value="100"/>
+        </properties>
+    </rule>
 
 </ruleset>
