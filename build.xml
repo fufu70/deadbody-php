@@ -2,18 +2,18 @@
 
 <project name="code-generator" default="full-build">
 
-    <property name="behat"              value="/var/lib/jenkins/.composer/vendor/bin/behat"/>
-    <property name="dbunit"             value="/var/lib/jenkins/.composer/vendor/bin/dbunit"/>
-    <property name="pdepend"            value="/var/lib/jenkins/.composer/vendor/bin/pdepend"/>
-    <property name="phpcb"              value="/var/lib/jenkins/.composer/vendor/bin/phpcb"/>
-    <property name="phpcpd"             value="/var/lib/jenkins/.composer/vendor/bin/phpcpd"/>
-    <property name="phpcs"              value="/var/lib/jenkins/.composer/vendor/bin/phpcs"/>
-    <property name="php-cs-fixer"       value="/var/lib/jenkins/.composer/vendor/bin/php-cs-fixer"/>
-    <property name="phpdox"             value="/var/lib/jenkins/.composer/vendor/bin/phpdox"/>
-    <property name="phploc"             value="/var/lib/jenkins/.composer/vendor/bin/phploc"/>
-    <property name="phpmd"              value="/var/lib/jenkins/.composer/vendor/bin/phpmd"/>
-    <property name="phpunit"            value="/var/lib/jenkins/.composer/vendor/bin/phpunit"/>
-    <property name="security-checker"   value="/var/lib/jenkins/.composer/vendor/bin/security-checker"/>
+    <property name="behat"              value="/usr/local/bin/behat"/>
+    <property name="dbunit"             value="/usr/local/bin/dbunit"/>
+    <property name="pdepend"            value="/usr/local/bin/pdepend"/>
+    <property name="phpcb"              value="/usr/local/bin/phpcb"/>
+    <property name="phpcpd"             value="/usr/local/bin/phpcpd"/>
+    <property name="phpcs"              value="/usr/local/bin/phpcs"/>
+    <property name="php-cs-fixer"       value="/usr/local/bin/php-cs-fixer"/>
+    <property name="phpdox"             value="/usr/local/bin/phpdox"/>
+    <property name="phploc"             value="/usr/local/bin/phploc"/>
+    <property name="phpmd"              value="/usr/local/bin/phpmd"/>
+    <property name="phpunit"            value="/usr/local/bin/phpunit"/>
+    <property name="security-checker"   value="/usr/local/bin/security-checker"/>
 
     <target name="full-build"
             depends="prepare,lint,phploc-ci,pdepend,phpmd-ci,phpcs-ci,phpcpd-ci,phpunit,phpdox,-check-failure"
