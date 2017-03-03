@@ -24,7 +24,6 @@
     <filter>
         <whitelist>
             <directory>../components</directory>
-            <directory>../config</directory>
             <directory>../controllers</directory>
             <directory>../models</directory>
         </whitelist>
