@@ -1,13 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <phpunit bootstrap="bootstrap.php"
-		colors="false"
-		convertErrorsToExceptions="true"
-		convertNoticesToExceptions="true"
-		convertWarningsToExceptions="true"
-		stopOnFailure="false">
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         syntaxCheck="false"
+        >
+	<testsuites>
+        <testsuite name="template-generator">
+            <directory suffix=".php">../test</directory>
+        </testsuite>
+    </testsuites>
 
-	<selenium>
-		<browser name="Internet Explorer" browser="*iexplore" />
-		<browser name="Firefox" browser="*firefox" />
-	</selenium>
+    <logging>
+        <log type="coverage-html" target="/../../../build/coverage"/>
+        <log type="coverage-clover" target="/../../../build/logs/clover.xml"/>
+        <log type="coverage-crap4j" target="/../../../build/logs/crap4j.xml"/>
+        <log type="junit" target="/../../../build/logs/junit.xml" logIncompleteSkipped="false"/>
+    </logging>
+
+    <filter>
+        <whitelist>
+            <directory>../../protected</directory>
+        </whitelist>
+        <blacklist>
+            <directory>../../protected/extensions</directory>
+            <directory>../../protected/runtime</directory>
+            <directory>../../protected/vendor</directory>
+        </blacklist>
+    </filter>
 
 </phpunit>
