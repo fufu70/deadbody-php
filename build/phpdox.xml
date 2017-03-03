@@ -42,7 +42,6 @@
         <include mask="*.php" />
         <exclude mask="**extensions**" />
         <exclude mask="**runtime**" />
-        <exclude mask="**vendor**" />
         <!--  How to handle inheritance -->
         <inheritance resolve="true">
             <!--  @resolve - Flag to enable/disable resolving of inheritance -->
