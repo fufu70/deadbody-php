@@ -40,7 +40,9 @@
 
         <!--  <include / exclude filter for filelist generator, mask must follow fnmatch() requirements  -->
         <include mask="*.php" />
-        <exclude mask="*/extensions/*,*/runtime/*,*/vendor/*" />
+        <exclude mask="**extensions**" />
+        <exclude mask="**runtime**" />
+        <exclude mask="**vendor**" />
         <!--  How to handle inheritance -->
         <inheritance resolve="true">
             <!--  @resolve - Flag to enable/disable resolving of inheritance -->
