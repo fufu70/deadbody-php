@@ -13,8 +13,7 @@ class WebTestCase extends \PHPUnit_Framework_TestCase
 	 */
 	protected function setUp()
 	{
-		parent::setUp();
-		$this->setBrowserUrl(TEST_BASE_URL);
+		// does nothing
 	}
 
 	public function test_true()
