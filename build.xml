@@ -127,7 +127,6 @@
             <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
             <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
             <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
-            <arg value="--ignore=/dir/one/,/dir/two/"/>
             <arg path="${basedir}/src/protected" />
         </exec>
 
@@ -138,6 +137,7 @@
             unless="phpmd.done"
             description="Perform project mess detection using PHPMD and print human readable output. Intended for usage on the command line before committing.">
         <exec executable="${phpmd}" taskname="phpmd">
+            <arg value="--exclude=vendor,runtime,extensions"/>
             <arg path="${basedir}/src/protected" />
             <arg value="text" />
             <arg path="${basedir}/build/phpmd.xml" />
@@ -151,6 +151,7 @@
             depends="prepare"
             description="Perform project mess detection using PHPMD and log result in XML format. Intended for usage within a continuous integration environment.">
         <exec executable="${phpmd}" taskname="phpmd">
+            <arg value="--exclude=vendor,runtime,extensions"/>
             <arg path="${basedir}/src/protected" />
             <arg value="xml" />
             <arg path="${basedir}/build/phpmd.xml" />
@@ -166,7 +167,7 @@
             description="Find coding standard violations using PHP_CodeSniffer and print human readable output. Intended for usage on the command line before committing.">
         <exec executable="${phpcs}" taskname="phpcs">
             <arg value="--extensions=php" />
-            <arg value="--ignore=autoload.php" />
+            <arg value="--ignore=autoload.php,vendor,runtime,extensions" />
             <arg path="${basedir}/src/protected" />
         </exec>
 
@@ -182,7 +183,7 @@
             <arg value="--report-file=${basedir}/build/logs/checkstyle.xml" />
             <arg value="--standard=${basedir}/build/phpcs.xml" />
             <arg value="--extensions=php" />
-            <arg value="--ignore=autoload.php" />
+            <arg value="--ignore=autoload.php,vendor,runtime,extensions" />
             <arg path="${basedir}/src/protected" />
         </exec>
 
@@ -193,7 +194,10 @@
             unless="phpcpd.done"
             description="Find duplicate code using PHPCPD and print human readable output. Intended for usage on the command line before committing.">
         <exec executable="${phpcpd}" taskname="phpcpd">
-            <arg path="${basedir}/src/protected/components" />
+            <arg value="--exclude=vendor"/>
+            <arg value="--exclude=extensions"/>
+            <arg value="--exclude=runtime"/>
+            <arg path="${basedir}/src/protected" />
         </exec>
 
         <property name="phpcpd.done" value="true"/>
@@ -205,6 +209,9 @@
             description="Find duplicate code using PHPCPD and log result in XML format. Intended for usage within a continuous integration environment.">
         <exec executable="${phpcpd}" taskname="phpcpd">
             <arg value="--log-pmd" />
+            <arg value="--exclude=vendor"/>
+            <arg value="--exclude=extensions"/>
+            <arg value="--exclude=runtime"/>
             <arg path="${basedir}/build/logs/pmd-cpd.xml" />
             <arg path="${basedir}/src/protected" />
         </exec>
