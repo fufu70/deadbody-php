@@ -91,11 +91,7 @@
         <exec executable="${phploc}" taskname="phploc">
             <arg value="--count-tests" />
             <arg value="--exclude"/>
-            <arg value="${basedir}/src/protected/vendor" />
-            <arg value="--exclude"/>
-            <arg value="${basedir}/src/protected/extensions" />
-            <arg value="--exclude"/>
-            <arg value="${basedir}/src/protected/runtime" />
+            <arg value="vendor extensions runtime" />
             <arg path="${basedir}/src/protected" />
             <arg path="${basedir}/tests" />
         </exec>
@@ -110,11 +106,7 @@
         <exec executable="${phploc}" taskname="phploc">
             <arg value="--count-tests" />
             <arg value="--exclude"/>
-            <arg value="${basedir}/src/protected/vendor" />
-            <arg value="--exclude"/>
-            <arg value="${basedir}/src/protected/extensions" />
-            <arg value="--exclude"/>
-            <arg value="${basedir}/src/protected/runtime" />
+            <arg value="vendor extensions runtime" />
             <arg value="--log-csv" />
             <arg path="${basedir}/build/logs/phploc.csv" />
             <arg value="--log-xml" />
