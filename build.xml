@@ -90,8 +90,9 @@
             description="Measure project size using PHPLOC and print human readable output. Intended for usage on the command line.">
         <exec executable="${phploc}" taskname="phploc">
             <arg value="--count-tests" />
-            <arg value="--exclude"/>
-            <arg value="vendor extensions runtime" />
+            <arg value="--exclude=vendor"/>
+            <arg value="--exclude=extensions"/>
+            <arg value="--exclude=runtime"/>
             <arg path="${basedir}/src/protected" />
             <arg path="${basedir}/tests" />
         </exec>
@@ -105,8 +106,9 @@
             description="Measure project size using PHPLOC and log result in CSV and XML format. Intended for usage within a continuous integration environment.">
         <exec executable="${phploc}" taskname="phploc">
             <arg value="--count-tests" />
-            <arg value="--exclude"/>
-            <arg value="vendor extensions runtime" />
+            <arg value="--exclude=vendor"/>
+            <arg value="--exclude=extensions"/>
+            <arg value="--exclude=runtime"/>
             <arg value="--log-csv" />
             <arg path="${basedir}/build/logs/phploc.csv" />
             <arg value="--log-xml" />
