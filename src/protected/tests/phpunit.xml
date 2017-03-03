@@ -23,13 +23,11 @@
 
     <filter>
         <whitelist>
-            <directory>../../protected</directory>
+            <directory>../components</directory>
+            <directory>../config</directory>
+            <directory>../controllers</directory>
+            <directory>../models</directory>
         </whitelist>
-        <blacklist>
-            <directory>../../protected/extensions</directory>
-            <directory>../../protected/runtime</directory>
-            <directory>../../protected/vendor</directory>
-        </blacklist>
     </filter>
 
 </phpunit>
