@@ -157,7 +157,8 @@
             <arg value="xml" />
             <arg path="${basedir}/build/phpmd.xml" />
             <arg value="--reportfile=${basedir}/build/logs/pmd.xml" />
-            <arg value="--exclude=vendor,runtime,extensions"/>
+            <arg value="--exclude" />
+            <arg value="${basedir}/src/protected/vendor" />
         </exec>
 
         <property name="phpmd.done" value="true"/>
