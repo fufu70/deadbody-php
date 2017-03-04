@@ -141,7 +141,8 @@
             <arg path="${basedir}/src/protected/" />
             <arg value="text" />
             <arg path="${basedir}/build/phpmd.xml" />
-            <arg value="--exclude=vendor,runtime,extensions"/>
+            <arg value="--exclude" />
+            <arg value="${basedir}/src/protected/vendor" />
         </exec>
 
         <property name="phpmd.done" value="true"/>
