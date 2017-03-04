@@ -127,7 +127,7 @@
             <arg value="--jdepend-xml=${basedir}/build/logs/jdepend.xml" />
             <arg value="--jdepend-chart=${basedir}/build/pdepend/dependencies.svg" />
             <arg value="--overview-pyramid=${basedir}/build/pdepend/overview-pyramid.svg" />
-            <arg path="${basedir}/src/protected" />
+            <arg path="${basedir}/src/protected/components" />
         </exec>
 
         <property name="pdepend.done" value="true"/>
@@ -140,8 +140,10 @@
             <arg path="${basedir}/src/protected" />
             <arg value="text" />
             <arg path="${basedir}/build/phpmd.xml" />
-            <arg value="--exclude vendor,runtime,extensions"/>
-            <arg value="--suffixes php"/>
+            <arg value="--exclude" />
+            <arg value="vendor,runtime,extensions"/>
+            <arg value="--suffixes" />
+            <arg value="php"/>
         </exec>
 
         <property name="phpmd.done" value="true"/>
@@ -155,9 +157,12 @@
             <arg path="${basedir}/src/protected" />
             <arg value="xml" />
             <arg path="${basedir}/build/phpmd.xml" />
-            <arg value="--reportfile ${basedir}/build/logs/pmd.xml" />
-            <arg value="--exclude vendor,runtime,extensions"/>
-            <arg value="--suffixes php"/>
+            <arg value="--reportfile" />
+            <arg value="${basedir}/build/logs/pmd.xml" />
+            <arg value="--exclude" />
+            <arg value="vendor,runtime,extensions"/>
+            <arg value="--suffixes" />
+            <arg value="php"/>
         </exec>
 
         <property name="phpmd.done" value="true"/>
