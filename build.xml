@@ -77,6 +77,9 @@
 
             <fileset dir="${basedir}/src">
                 <include name="**/*.php" />
+                <exclude name="**/vendor/**" />
+                <exclude name="**/extensions/**" />
+                <exclude name="**/runtime/**" />
                 <modified />
             </fileset>
 
