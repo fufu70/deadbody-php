@@ -6,6 +6,6 @@ curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/loca
 
 cd /var/www/skeleton/protected
 
-sudo ./composer.phar update
+sudo composer update
 
 cd ~
